@@ -61,6 +61,26 @@ Design choices that make history genuinely predictive but non-trivial:
   exploration); a small fraction (~1%) of `household_size` values are
   blanked to simulate missing data.
 
+### Evidence these properties are actually in the data
+
+Rather than just asserting the above, [`src/eda.py`](../src/eda.py) generates
+the figures below directly from `data/bookings.csv`:
+
+| | |
+|---|---|
+| ![Facility popularity](figures/facility_popularity.png) | ![Resident engagement](figures/resident_engagement_sparsity.png) |
+| ![Preference concentration](figures/preference_concentration.png) | ![Lead time by facility](figures/lead_time_by_facility.png) |
+| ![Seasonality](figures/seasonality.png) | ![Behaviour drift example](figures/behaviour_drift_example.png) |
+
+The drift example (bottom-right) is found **empirically** — by comparing each
+resident's first-half vs. second-half facility mix and picking the largest
+shift — rather than read off the generator's hidden parameters, so it's
+evidence about the data, not the code that made it. Resident R-0252 goes
+from 89% Kids Play Area bookings to 0%, and from 0% Gym to 70%, right around
+the midpoint of their history — consistent with the ~15% of residents given
+a scripted behaviour shift (a plausible real-world story: a resident whose
+children aged out of the play area and who then took up a fitness routine).
+
 ## 3. Leakage-safe feature engineering
 
 Implemented in [`src/features.py`](../src/features.py). The rule: **every
@@ -101,6 +121,27 @@ Feature groups:
 - **Cold start**: a resident's very first booking has no personal history;
   those rows get an `is_cold_start` flag and fall back to global
   expanding statistics rather than `NaN`.
+
+### Proving the leakage-safety claim mechanically
+
+[`tests/test_leakage.py`](../tests/test_leakage.py) doesn't just assert
+leakage-safety in prose — it tests it directly:
+
+1. Pick a booking mid-way through a resident's history.
+2. Rewrite the facility and usage time of **every booking at or after that
+   point** (that resident's own later bookings, and everyone else's) to
+   something else entirely, leaving `booking_timestamp` (the leakage
+   boundary) untouched.
+3. Recompute features from scratch and assert the probe booking's feature
+   vector is **byte-for-byte identical** — if any feature had secretly
+   depended on the future, this would catch it.
+4. As a sanity check that this isn't vacuously true (e.g. because the
+   features are constants), a mirror-image test scrambles the **past**
+   instead and asserts the same row's features **do** change.
+
+Runs automatically on every push via GitHub Actions (see
+[`.github/workflows/ci.yml`](../.github/workflows/ci.yml)); locally:
+`python tests/test_leakage.py`.
 
 ### Cascaded (two-stage) model design
 
@@ -183,6 +224,59 @@ numbers, and [`outputs/predictions_review.csv`](../outputs/predictions_review.cs
 / `.xlsx` for the row-by-row predicted-vs-actual table with match
 indicators, in the format illustrated in the brief).
 
+### Facility top-k accuracy and confidence-gated nudging
+
+A single-guess accuracy number understates how useful the facility model is
+for a real recommendation/nudge use case, where showing a short list or
+gating on confidence is normal:
+
+| Metric | Value |
+|---|---|
+| Top-1 accuracy | 43.5% |
+| Top-2 accuracy (correct facility in the model's top 2 guesses) | **62.8%** |
+| Top-3 accuracy | **73.9%** |
+
+And if the system only sends a facility nudge when the model is confident
+enough (`predict_proba` max class probability), accuracy on the nudges that
+*do* go out rises sharply, at the cost of covering fewer residents:
+
+| Minimum confidence | Residents covered | Facility accuracy on those nudges |
+|---|---|---|
+| 0.00 (nudge everyone) | 100% | 43.5% |
+| 0.25 | 78% | 48.1% |
+| 0.35 | 49% | 54.9% |
+| 0.45 | 22% | 64.7% |
+| 0.55 | 7% | 71.1% |
+
+This is the more realistic way to read the facility model's performance for
+a production nudge system: don't force a guess for every resident — only act
+where the model is actually confident, and cover the rest with a generic
+reminder or a top-3 shortlist. Full curve in
+`metrics.json → error_analysis.confidence_gated_nudging`, and both this and
+top-k are visualised in the [interactive dashboard](#6-interactive-review-dashboard).
+
+### Model comparison and cross-validation stability
+
+Two checks that the single train/test split above isn't misleading
+(run via `python -m src.model_comparison`, output in
+[`outputs/model_comparison.json`](../outputs/model_comparison.json)):
+
+- **Model family**: Random Forest (43.5% accuracy, macro-F1 0.42) beats
+  scikit-learn's Histogram Gradient Boosting (40.4% accuracy, macro-F1 0.38)
+  on the same split for facility prediction — validating Random Forest as
+  the chosen family rather than just asserting it.
+- **Rolling-origin (walk-forward) cross-validation**: instead of one
+  train/test cutoff, the test window is slid across 4 sequential later
+  periods. Facility accuracy is **42.9% ± 0.6%** across folds — tight
+  variance, meaning the headline number isn't a lucky single split:
+
+  | Fold | Test window | Accuracy |
+  |---|---|---|
+  | 0 | 2025-03-10 → 2025-05-26 | 43.4% |
+  | 1 | 2025-05-26 → 2025-08-09 | 42.7% |
+  | 2 | 2025-08-09 → 2025-10-18 | 42.0% |
+  | 3 | 2025-10-18 → 2025-12-31 | 43.5% |
+
 ### Error analysis
 
 - **By facility** (`error_analysis.facility_accuracy_by_true_facility` in
@@ -202,7 +296,19 @@ indicators, in the format illustrated in the brief).
   Badminton, Clubhouse → Gym) — residents who split time between a couple of
   facilities are the hardest to call correctly, as expected.
 
-## 6. Reproducing the results
+## 6. Interactive review dashboard
+
+[`outputs/dashboard.html`](../outputs/dashboard.html) is a single
+self-contained HTML file (built by `python -m src.dashboard`, no server or
+internet connection needed — data is embedded inline, so double-clicking it
+just works) that gives the "spreadsheet or UI table" deliverable a browsable
+form: headline KPIs, per-output vs. baseline bars, the top-k/confidence-gating
+tables above, error analysis, model comparison, and the full 1,738-row
+predicted-vs-actual table with search, per-facility and per-match-status
+filters, sortable columns, and pagination. `outputs/predictions_review.csv` /
+`.xlsx` remain the flat-file version of the same data.
+
+## 7. Reproducing the results
 
 ```bash
 pip install -r requirements.txt
@@ -213,9 +319,13 @@ python run_pipeline.py
 missing, so re-running it against the **submitted** dataset (already in the
 repo) will retrain and re-evaluate against the exact same data — the
 `random_state=42` seeds used throughout (data generation, train/test split,
-model fitting) make the reported numbers reproducible.
+model fitting) make the reported numbers reproducible. It also rebuilds the
+model comparison, EDA figures, and dashboard. A GitHub Actions workflow
+([`.github/workflows/ci.yml`](../.github/workflows/ci.yml)) runs the leakage
+tests and the train → evaluate → predict → dashboard chain on every push, so
+reproducibility is checked mechanically, not just claimed.
 
-## 7. Limitations
+## 8. Limitations
 
 - **Synthetic data**: patterns (preference peakiness, "usual slot" habit
   strength, drift frequency) are hand-tuned to be realistic but are not
@@ -241,6 +351,8 @@ model fitting) make the reported numbers reproducible.
   evaluated** here because so few occur inside the test window; the
   fallback-to-global-priors behaviour for such rows is implemented and
   flagged (`is_cold_start`) but not heavily stress-tested.
-- **No hyperparameter tuning**: model settings were chosen for reasonable,
-  reproducible performance and a small on-disk footprint, not tuned via
-  cross-validation grid search — there is headroom left on the table.
+- **No hyperparameter tuning**: Random Forest was validated against Hist
+  Gradient Boosting as a model *family* (§ Model comparison), but neither was
+  tuned via a cross-validation grid search — settings were chosen for
+  reasonable, reproducible performance and a small on-disk footprint. There
+  is headroom left on the table.

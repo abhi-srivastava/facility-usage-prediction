@@ -63,6 +63,8 @@ def main():
     test = pd.read_csv(f"{DATA_DIR}/test.csv", parse_dates=["booking_timestamp", "usage_timestamp", "move_in_date"])
     X_test_facility = dm_facility.transform(test)
     pred_facility = facility_model.predict(X_test_facility)
+    facility_proba = facility_model.predict_proba(X_test_facility)
+    facility_classes = facility_model.classes_
 
     # day/hour/lead-time condition on the PREDICTED facility (true future facility is unknown at inference time)
     test = test.copy()
@@ -85,6 +87,13 @@ def main():
     matches = np.vstack([facility_match, dow_match, hour_match, leadtime_match]).T
     n_matches = matches.sum(axis=1)
 
+    facility_confidence = facility_proba.max(axis=1)
+    top3_idx = np.argsort(-facility_proba, axis=1)[:, :3]
+    top3_facilities = facility_classes[top3_idx]
+    top1_acc = float(facility_match.mean())
+    top2_acc = float(np.mean([actual_facility[i] in top3_facilities[i, :2] for i in range(len(test))]))
+    top3_acc = float(np.mean([actual_facility[i] in top3_facilities[i, :3] for i in range(len(test))]))
+
     # ---------------- metrics ----------------
     metrics = {
         "test_rows": int(len(test)),
@@ -93,6 +102,10 @@ def main():
             "facility": {
                 "accuracy": float(accuracy_score(actual_facility, pred_facility)),
                 "macro_f1": float(f1_score(actual_facility, pred_facility, average="macro")),
+                "top1_accuracy": top1_acc,
+                "top2_accuracy": top2_acc,
+                "top3_accuracy": top3_acc,
+                "note": "topN = correct facility appears among the model's N highest-probability guesses",
             },
             "usage_day_of_week": {
                 "exact_accuracy": float(accuracy_score(actual_dow, pred_dow)),
@@ -148,6 +161,19 @@ def main():
     metrics["error_analysis"]["facility_accuracy_by_history_depth"] = (
         pd.Series(facility_match).groupby(depth_bucket.values, observed=True).mean().round(3).to_dict()
     )
+    # confidence-gated nudges: only act on predictions the model is confident about --
+    # trades coverage (how many residents get a nudge) for precision (how often it's right)
+    thresholds = [0.0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75]
+    confidence_gate = []
+    for t in thresholds:
+        gated = facility_confidence >= t
+        coverage = float(gated.mean())
+        precision = float(facility_match[gated].mean()) if gated.any() else None
+        confidence_gate.append({
+            "min_confidence": t, "coverage_rate": coverage, "facility_accuracy_when_nudged": precision,
+        })
+    metrics["error_analysis"]["confidence_gated_nudging"] = confidence_gate
+
     top_confusions = (
         pd.DataFrame({"actual": actual_facility, "predicted": pred_facility})
         .query("actual != predicted")
@@ -173,6 +199,8 @@ def main():
             "past_bookings_seen": int(row["n_prior_bookings"]),
             "last_facility_booked": row["last_facility"],
             "pred_facility": pred_facility[i],
+            "pred_facility_confidence": round(float(facility_confidence[i]), 3),
+            "pred_facility_top3": ", ".join(top3_facilities[i]),
             "pred_usage_day": DAY_NAMES[int(pred_dow[i])],
             "pred_usage_time": fmt_hhmm(pred_hour[i]),
             "pred_nudge_day": DAY_NAMES[pred_nudge_dt.dayofweek],

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Leakage-safety tests
+        run: python tests/test_leakage.py
+
+      - name: Train on the committed dataset
+        run: python -m src.train
+
+      - name: Evaluate on the held-out chronological test set
+        run: python -m src.evaluate
+
+      - name: Forward-looking prediction
+        run: python -m src.predict
+
+      - name: Sanity-check results beat naive baselines
+        run: |
+          python -c "
+          import json
+          m = json.load(open('outputs/metrics.json'))
+          facility_acc = m['per_output']['facility']['accuracy']
+          baseline = m['baselines']['always_predict_global_mode']['facility_accuracy']
+          assert facility_acc > baseline * 1.5, f'facility accuracy {facility_acc} is not meaningfully above baseline {baseline}'
+          print(f'OK: facility accuracy {facility_acc:.3f} vs baseline {baseline:.3f}')
+          "
+
+      - name: Build dashboard
+        run: python -m src.dashboard

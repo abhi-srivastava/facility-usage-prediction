@@ -4,7 +4,11 @@
   "per_output": {
     "facility": {
       "accuracy": 0.43498273878020716,
-      "macro_f1": 0.42345679466067776
+      "macro_f1": 0.42345679466067776,
+      "top1_accuracy": 0.43498273878020716,
+      "top2_accuracy": 0.6283084004602992,
+      "top3_accuracy": 0.739355581127733,
+      "note": "topN = correct facility appears among the model's N highest-probability guesses"
     },
     "usage_day_of_week": {
       "exact_accuracy": 0.5074798619102416,
@@ -16,7 +20,7 @@
     },
     "notification_time_leadtime": {
       "mae_hours": 77.59159484219354,
-      "median_absolute_error_hours": 13.741639303943394,
+      "median_absolute_error_hours": 13.741639303943398,
       "rmse_hours": 176.4951065147782,
       "mae_log_hours": 1.0026380438671907,
       "match_within_tolerance_rate": 0.24338319907940162,
@@ -54,6 +58,43 @@
       "warm_4_10": 0.409,
       "warm_10plus": 0.436
     },
+    "confidence_gated_nudging": [
+      {
+        "min_confidence": 0.0,
+        "coverage_rate": 1.0,
+        "facility_accuracy_when_nudged": 0.43498273878020716
+      },
+      {
+        "min_confidence": 0.25,
+        "coverage_rate": 0.7848101265822784,
+        "facility_accuracy_when_nudged": 0.4809384164222874
+      },
+      {
+        "min_confidence": 0.35,
+        "coverage_rate": 0.49252013808975836,
+        "facility_accuracy_when_nudged": 0.5490654205607477
+      },
+      {
+        "min_confidence": 0.45,
+        "coverage_rate": 0.22497123130034521,
+        "facility_accuracy_when_nudged": 0.6470588235294118
+      },
+      {
+        "min_confidence": 0.55,
+        "coverage_rate": 0.06559263521288838,
+        "facility_accuracy_when_nudged": 0.7105263157894737
+      },
+      {
+        "min_confidence": 0.65,
+        "coverage_rate": 0.018411967779056387,
+        "facility_accuracy_when_nudged": 0.875
+      },
+      {
+        "min_confidence": 0.75,
+        "coverage_rate": 0.0011507479861910242,
+        "facility_accuracy_when_nudged": 1.0
+      }
+    ],
     "top_facility_confusions": {
       "Kids Play Area -> predicted Swimming Pool": 36,
       "Clubhouse -> predicted Gym": 34,
