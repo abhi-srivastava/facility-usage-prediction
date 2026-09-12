@@ -1,0 +1,70 @@
+{
+  "test_rows": 1738,
+  "cutoff_timestamp_used_for_split": null,
+  "per_output": {
+    "facility": {
+      "accuracy": 0.43498273878020716,
+      "macro_f1": 0.42345679466067776
+    },
+    "usage_day_of_week": {
+      "exact_accuracy": 0.5074798619102416,
+      "within_1_day_accuracy": 0.8141542002301496
+    },
+    "usage_hour": {
+      "exact_accuracy": 0.3849252013808976,
+      "mae_hours": 2.730149597238205
+    },
+    "notification_time_leadtime": {
+      "mae_hours": 77.59159484219354,
+      "median_absolute_error_hours": 13.741639303943394,
+      "rmse_hours": 176.4951065147782,
+      "mae_log_hours": 1.0026380438671907,
+      "match_within_tolerance_rate": 0.24338319907940162,
+      "tolerance_note": "match = within max(3h, 15% of actual lead time)"
+    }
+  },
+  "overall": {
+    "mean_outputs_correct_out_of_4": 1.570771001150748,
+    "all_4_correct_rate": 0.08745684695051784,
+    "at_least_2_of_4_correct_rate": 0.48504027617951667,
+    "per_output_average_accuracy": 0.392692750287687
+  },
+  "baselines": {
+    "always_predict_global_mode": {
+      "facility_accuracy": 0.1524741081703107,
+      "dow_accuracy": 0.1812428078250863,
+      "hour_accuracy": 0.1518987341772152,
+      "leadtime_mae_hours": 64.11176336545087
+    },
+    "persistence_last_facility_accuracy": 0.34004602991944766
+  },
+  "error_analysis": {
+    "facility_accuracy_by_true_facility": {
+      "Badminton Court": 0.446,
+      "Clubhouse": 0.258,
+      "Gym": 0.485,
+      "Kids Play Area": 0.411,
+      "Multipurpose Hall": 0.438,
+      "Squash Court": 0.351,
+      "Swimming Pool": 0.547,
+      "Tennis Court": 0.469
+    },
+    "facility_accuracy_by_history_depth": {
+      "warm_1_3": 0.5,
+      "warm_4_10": 0.409,
+      "warm_10plus": 0.436
+    },
+    "top_facility_confusions": {
+      "Kids Play Area -> predicted Swimming Pool": 36,
+      "Clubhouse -> predicted Gym": 34,
+      "Gym -> predicted Swimming Pool": 30,
+      "Kids Play Area -> predicted Multipurpose Hall": 29,
+      "Tennis Court -> predicted Multipurpose Hall": 28,
+      "Gym -> predicted Multipurpose Hall": 27,
+      "Squash Court -> predicted Gym": 25,
+      "Squash Court -> predicted Badminton Court": 24,
+      "Swimming Pool -> predicted Gym": 24,
+      "Swimming Pool -> predicted Tennis Court": 23
+    }
+  }
+}

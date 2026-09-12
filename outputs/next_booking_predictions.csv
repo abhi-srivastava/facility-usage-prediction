@@ -1,0 +1,320 @@
+resident_id,as_of_date,bookings_in_history,predicted_next_facility,predicted_usage_day,predicted_usage_time,predicted_lead_time_hours,predicted_nudge_day,predicted_nudge_time
+R-0001,2026-01-01,9,Multipurpose Hall,Fri,17:00,255.1,Tue,01:54
+R-0002,2026-01-01,12,Tennis Court,Fri,06:00,50.2,Wed,03:48
+R-0003,2026-01-01,33,Tennis Court,Fri,18:00,56.4,Wed,09:36
+R-0004,2026-01-01,10,Squash Court,Thu,07:00,6.0,Thu,01:03
+R-0005,2026-01-01,22,Badminton Court,Fri,17:00,38.1,Thu,02:56
+R-0006,2026-01-01,24,Tennis Court,Sat,07:00,35.8,Thu,19:09
+R-0007,2026-01-01,3,Squash Court,Sat,07:00,27.5,Fri,03:28
+R-0008,2026-01-01,7,Badminton Court,Thu,19:00,14.9,Thu,04:08
+R-0009,2026-01-01,14,Kids Play Area,Thu,16:00,1.6,Thu,14:22
+R-0010,2026-01-01,20,Clubhouse,Sat,11:00,482.2,Sun,08:47
+R-0011,2026-01-01,39,Multipurpose Hall,Sat,19:00,395.0,Thu,08:03
+R-0012,2026-01-01,38,Gym,Sat,17:00,28.6,Fri,12:21
+R-0013,2026-01-01,31,Swimming Pool,Thu,19:00,15.9,Thu,03:07
+R-0014,2026-01-01,20,Swimming Pool,Fri,08:00,16.5,Thu,15:31
+R-0015,2026-01-01,4,Clubhouse,Sat,20:00,100.5,Tue,15:30
+R-0016,2026-01-01,34,Kids Play Area,Thu,16:00,6.6,Thu,09:22
+R-0017,2026-01-01,12,Multipurpose Hall,Thu,17:00,177.1,Thu,07:55
+R-0018,2026-01-01,41,Tennis Court,Sat,19:00,29.2,Fri,13:50
+R-0019,2026-01-01,38,Tennis Court,Thu,17:00,22.8,Wed,18:11
+R-0020,2026-01-01,29,Gym,Thu,09:00,15.2,Wed,17:47
+R-0021,2026-01-01,10,Tennis Court,Sat,07:00,31.3,Thu,23:44
+R-0022,2026-01-01,29,Kids Play Area,Thu,09:00,6.9,Thu,02:04
+R-0023,2026-01-01,30,Tennis Court,Fri,06:00,12.9,Thu,17:06
+R-0024,2026-01-01,40,Clubhouse,Sat,17:00,173.0,Sat,12:02
+R-0025,2026-01-01,13,Swimming Pool,Fri,07:00,24.6,Thu,06:25
+R-0026,2026-01-01,39,Tennis Court,Fri,18:00,38.1,Thu,03:55
+R-0027,2026-01-01,33,Gym,Sat,09:00,15.7,Fri,17:21
+R-0028,2026-01-01,41,Gym,Fri,20:00,4.2,Fri,15:49
+R-0029,2026-01-01,36,Kids Play Area,Fri,16:00,4.0,Fri,12:02
+R-0030,2026-01-01,38,Clubhouse,Sat,11:00,275.5,Mon,23:28
+R-0031,2026-01-01,18,Gym,Fri,16:00,15.3,Fri,00:42
+R-0032,2026-01-01,73,Tennis Court,Fri,06:00,35.3,Wed,18:40
+R-0033,2026-01-01,35,Squash Court,Fri,19:00,15.8,Fri,03:14
+R-0034,2026-01-01,11,Swimming Pool,Fri,19:00,15.8,Fri,03:11
+R-0035,2026-01-01,24,Swimming Pool,Fri,16:00,35.5,Thu,04:30
+R-0036,2026-01-01,81,Multipurpose Hall,Thu,10:00,44.6,Tue,13:23
+R-0037,2026-01-01,6,Squash Court,Fri,07:00,3.8,Fri,03:11
+R-0038,2026-01-01,42,Multipurpose Hall,Thu,18:00,189.6,Wed,20:24
+R-0039,2026-01-01,65,Multipurpose Hall,Thu,10:00,521.6,Wed,16:23
+R-0040,2026-01-01,23,Tennis Court,Fri,07:00,48.5,Wed,06:32
+R-0041,2026-01-01,8,Clubhouse,Sat,20:00,70.2,Wed,21:49
+R-0042,2026-01-01,19,Badminton Court,Thu,20:00,3.8,Thu,16:10
+R-0043,2026-01-01,20,Gym,Fri,11:00,34.7,Thu,00:20
+R-0044,2026-01-01,26,Squash Court,Fri,19:00,3.5,Fri,15:30
+R-0045,2026-01-01,51,Clubhouse,Sat,17:00,107.5,Tue,05:29
+R-0046,2026-01-01,58,Kids Play Area,Thu,18:00,2.2,Thu,15:45
+R-0047,2026-01-01,27,Squash Court,Thu,18:00,3.3,Thu,14:40
+R-0048,2026-01-01,32,Kids Play Area,Sat,17:00,3.8,Sat,13:14
+R-0049,2026-01-01,14,Kids Play Area,Thu,10:00,7.2,Thu,02:50
+R-0050,2026-01-01,22,Clubhouse,Sat,20:00,113.1,Tue,02:53
+R-0051,2026-01-01,3,Squash Court,Fri,07:00,15.6,Thu,15:26
+R-0052,2026-01-01,89,Badminton Court,Thu,17:00,4.6,Thu,12:27
+R-0053,2026-01-01,11,Badminton Court,Sat,18:00,33.9,Fri,08:05
+R-0054,2026-01-01,36,Badminton Court,Sat,18:00,4.5,Sat,13:31
+R-0055,2026-01-01,24,Swimming Pool,Fri,18:00,3.5,Fri,14:28
+R-0056,2026-01-01,57,Swimming Pool,Thu,08:00,16.5,Wed,15:33
+R-0057,2026-01-01,44,Gym,Sat,09:00,15.8,Fri,17:09
+R-0058,2026-01-01,56,Swimming Pool,Thu,08:00,16.6,Wed,15:24
+R-0059,2026-01-01,27,Kids Play Area,Thu,10:00,3.9,Thu,06:04
+R-0060,2026-01-01,32,Clubhouse,Thu,11:00,339.3,Thu,07:40
+R-0061,2026-01-01,35,Swimming Pool,Sat,19:00,17.3,Sat,01:41
+R-0062,2026-01-01,55,Badminton Court,Fri,20:00,52.1,Wed,15:55
+R-0063,2026-01-01,25,Badminton Court,Fri,19:00,16.3,Fri,02:42
+R-0064,2026-01-01,76,Tennis Court,Sat,18:00,29.5,Fri,12:33
+R-0065,2026-01-01,10,Gym,Fri,17:00,29.5,Thu,11:28
+R-0066,2026-01-01,62,Squash Court,Sat,19:00,16.5,Sat,02:31
+R-0067,2026-01-01,18,Swimming Pool,Thu,07:00,3.5,Thu,03:28
+R-0068,2026-01-01,14,Swimming Pool,Thu,19:00,16.2,Thu,02:48
+R-0069,2026-01-01,38,Gym,Sat,15:00,15.6,Fri,23:22
+R-0070,2026-01-01,31,Swimming Pool,Thu,06:00,29.2,Wed,00:47
+R-0071,2026-01-01,5,Tennis Court,Fri,18:00,27.1,Thu,14:54
+R-0072,2026-01-01,13,Clubhouse,Sat,17:00,535.5,Fri,09:28
+R-0073,2026-01-01,21,Kids Play Area,Thu,10:00,1.9,Thu,08:07
+R-0074,2026-01-01,12,Swimming Pool,Thu,07:00,28.7,Wed,02:15
+R-0075,2026-01-01,23,Gym,Sat,09:00,33.3,Thu,23:43
+R-0076,2026-01-01,65,Multipurpose Hall,Fri,10:00,321.6,Sat,00:26
+R-0077,2026-01-01,37,Kids Play Area,Thu,17:00,1.6,Thu,15:24
+R-0078,2026-01-01,22,Swimming Pool,Fri,16:00,34.5,Thu,05:30
+R-0079,2026-01-01,19,Kids Play Area,Thu,10:00,2.7,Thu,07:20
+R-0080,2026-01-01,16,Gym,Thu,18:00,15.0,Thu,02:59
+R-0081,2026-01-01,9,Gym,Fri,11:00,15.4,Thu,19:39
+R-0082,2026-01-01,50,Gym,Fri,19:00,3.4,Fri,15:37
+R-0083,2026-01-01,50,Multipurpose Hall,Thu,17:00,177.7,Thu,07:18
+R-0084,2026-01-01,29,Swimming Pool,Fri,07:00,16.8,Thu,14:11
+R-0085,2026-01-01,25,Tennis Court,Thu,17:00,32.7,Wed,08:21
+R-0086,2026-01-01,46,Squash Court,Fri,19:00,3.9,Fri,15:07
+R-0087,2026-01-01,17,Clubhouse,Sat,19:00,72.5,Wed,18:30
+R-0088,2026-01-01,14,Tennis Court,Fri,07:00,38.8,Wed,16:14
+R-0089,2026-01-01,7,Gym,Thu,17:00,15.1,Thu,01:53
+R-0090,2026-01-01,80,Badminton Court,Sat,20:00,46.9,Thu,21:04
+R-0091,2026-01-01,28,Badminton Court,Sat,17:00,18.4,Fri,22:35
+R-0092,2026-01-01,43,Kids Play Area,Thu,17:00,5.3,Thu,11:40
+R-0093,2026-01-01,14,Clubhouse,Sat,20:00,169.1,Sat,18:55
+R-0094,2026-01-01,15,Badminton Court,Thu,17:00,3.5,Thu,13:31
+R-0095,2026-01-01,14,Gym,Thu,17:00,3.7,Thu,13:20
+R-0096,2026-01-01,64,Gym,Fri,11:00,15.5,Thu,19:30
+R-0097,2026-01-01,9,Swimming Pool,Fri,07:00,20.5,Thu,10:31
+R-0098,2026-01-01,48,Kids Play Area,Thu,10:00,9.6,Thu,00:26
+R-0099,2026-01-01,27,Badminton Court,Thu,18:00,3.5,Thu,14:30
+R-0100,2026-01-01,60,Tennis Court,Fri,17:00,37.5,Thu,03:29
+R-0101,2026-01-01,54,Badminton Court,Sat,19:00,21.2,Fri,21:49
+R-0102,2026-01-01,38,Tennis Court,Fri,06:00,15.0,Thu,15:03
+R-0103,2026-01-01,21,Gym,Thu,19:00,15.4,Thu,03:35
+R-0104,2026-01-01,32,Gym,Sat,16:00,31.5,Fri,08:27
+R-0105,2026-01-01,47,Tennis Court,Fri,07:00,71.5,Tue,07:31
+R-0106,2026-01-01,28,Swimming Pool,Thu,08:00,4.3,Thu,03:41
+R-0107,2026-01-01,12,Tennis Court,Fri,19:00,41.4,Thu,01:39
+R-0108,2026-01-01,12,Gym,Fri,11:00,18.3,Thu,16:42
+R-0109,2026-01-01,14,Gym,Thu,11:00,18.3,Wed,16:44
+R-0110,2026-01-01,46,Squash Court,Fri,08:00,16.3,Thu,15:40
+R-0111,2026-01-01,56,Swimming Pool,Thu,19:00,16.4,Thu,02:37
+R-0112,2026-01-01,16,Multipurpose Hall,Sat,19:00,164.4,Sat,22:36
+R-0113,2026-01-01,15,Tennis Court,Fri,07:00,52.9,Wed,02:04
+R-0114,2026-01-01,41,Kids Play Area,Thu,10:00,6.9,Thu,03:05
+R-0115,2026-01-01,29,Badminton Court,Thu,18:00,17.7,Thu,00:20
+R-0116,2026-01-01,10,Gym,Sat,19:00,14.9,Sat,04:04
+R-0117,2026-01-01,40,Swimming Pool,Sat,08:00,16.9,Fri,15:06
+R-0118,2026-01-01,21,Kids Play Area,Thu,18:00,2.6,Thu,15:26
+R-0119,2026-01-01,27,Clubhouse,Thu,11:00,554.4,Tue,08:38
+R-0120,2026-01-01,37,Kids Play Area,Thu,17:00,5.7,Thu,11:18
+R-0121,2026-01-01,23,Clubhouse,Sat,11:00,609.1,Tue,01:54
+R-0122,2026-01-01,60,Gym,Sat,20:00,16.4,Sat,03:36
+R-0123,2026-01-01,6,Badminton Court,Fri,18:00,8.7,Fri,09:19
+R-0124,2026-01-01,28,Squash Court,Thu,18:00,3.8,Thu,14:15
+R-0125,2026-01-01,32,Gym,Thu,09:00,33.3,Tue,23:45
+R-0126,2026-01-01,20,Gym,Sat,17:00,15.8,Sat,01:12
+R-0127,2026-01-01,44,Tennis Court,Thu,07:00,8.8,Wed,22:12
+R-0128,2026-01-01,27,Tennis Court,Thu,17:00,30.6,Wed,10:24
+R-0129,2026-01-01,39,Squash Court,Fri,08:00,17.1,Thu,14:53
+R-0130,2026-01-01,21,Clubhouse,Thu,11:00,176.5,Thu,02:31
+R-0131,2026-01-01,18,Badminton Court,Fri,19:00,20.5,Thu,22:30
+R-0132,2026-01-01,19,Tennis Court,Fri,07:00,61.8,Tue,17:10
+R-0133,2026-01-01,30,Swimming Pool,Thu,17:00,3.0,Thu,13:58
+R-0134,2026-01-01,19,Clubhouse,Fri,17:00,374.8,Thu,02:10
+R-0135,2026-01-01,42,Kids Play Area,Thu,16:00,6.4,Thu,09:34
+R-0136,2026-01-01,25,Swimming Pool,Fri,07:00,16.0,Thu,15:01
+R-0137,2026-01-01,42,Kids Play Area,Thu,17:00,1.5,Thu,15:28
+R-0138,2026-01-01,35,Tennis Court,Thu,18:00,36.3,Wed,05:41
+R-0139,2026-01-01,67,Tennis Court,Fri,18:00,66.4,Tue,23:37
+R-0140,2026-01-01,5,Kids Play Area,Thu,18:00,1.9,Thu,16:03
+R-0141,2026-01-01,40,Swimming Pool,Thu,07:00,16.5,Wed,14:33
+R-0142,2026-01-01,31,Swimming Pool,Thu,07:00,4.4,Thu,02:36
+R-0143,2026-01-01,27,Kids Play Area,Thu,18:00,2.9,Thu,15:06
+R-0144,2026-01-01,56,Badminton Court,Sat,17:00,18.6,Fri,22:22
+R-0145,2026-01-01,33,Tennis Court,Fri,07:00,20.5,Thu,10:30
+R-0146,2026-01-01,78,Badminton Court,Thu,18:00,3.3,Thu,14:42
+R-0147,2026-01-01,15,Swimming Pool,Thu,19:00,16.4,Thu,02:37
+R-0148,2026-01-01,14,Badminton Court,Thu,17:00,20.4,Wed,20:34
+R-0149,2026-01-01,32,Tennis Court,Sat,17:00,36.4,Fri,04:37
+R-0150,2026-01-01,18,Tennis Court,Thu,17:00,31.9,Wed,09:04
+R-0151,2026-01-01,39,Gym,Thu,17:00,15.3,Thu,01:41
+R-0152,2026-01-01,35,Tennis Court,Fri,07:00,62.4,Tue,16:38
+R-0153,2026-01-01,16,Gym,Fri,08:00,5.9,Fri,02:08
+R-0154,2026-01-01,29,Multipurpose Hall,Fri,17:00,492.6,Sat,04:27
+R-0155,2026-01-01,29,Gym,Sat,17:00,17.9,Fri,23:09
+R-0156,2026-01-01,10,Badminton Court,Sat,18:00,4.6,Sat,13:23
+R-0157,2026-01-01,47,Kids Play Area,Fri,16:00,3.3,Fri,12:42
+R-0158,2026-01-01,65,Swimming Pool,Thu,16:00,3.2,Thu,12:47
+R-0159,2026-01-01,38,Multipurpose Hall,Thu,17:00,130.0,Sat,07:01
+R-0160,2026-01-01,20,Kids Play Area,Thu,17:00,2.1,Thu,14:52
+R-0161,2026-01-01,25,Tennis Court,Fri,07:00,53.8,Wed,01:12
+R-0162,2026-01-01,12,Kids Play Area,Thu,10:00,6.7,Thu,03:18
+R-0163,2026-01-01,51,Kids Play Area,Thu,18:00,3.6,Thu,14:24
+R-0164,2026-01-01,26,Multipurpose Hall,Sat,17:00,109.6,Tue,03:24
+R-0165,2026-01-01,34,Squash Court,Thu,19:00,3.1,Thu,15:52
+R-0166,2026-01-01,56,Gym,Sat,11:00,15.6,Fri,19:26
+R-0167,2026-01-01,41,Gym,Fri,10:00,5.3,Fri,04:40
+R-0168,2026-01-01,26,Kids Play Area,Thu,18:00,2.3,Thu,15:41
+R-0169,2026-01-01,12,Kids Play Area,Thu,18:00,4.9,Thu,13:08
+R-0170,2026-01-01,37,Swimming Pool,Thu,18:00,16.2,Thu,01:48
+R-0171,2026-01-01,13,Swimming Pool,Fri,19:00,16.8,Fri,02:09
+R-0172,2026-01-01,21,Kids Play Area,Thu,17:00,1.8,Thu,15:13
+R-0173,2026-01-01,15,Gym,Sat,17:00,25.2,Fri,15:47
+R-0174,2026-01-01,44,Gym,Sat,11:00,16.1,Fri,18:56
+R-0175,2026-01-01,34,Squash Court,Sat,08:00,16.8,Fri,15:14
+R-0176,2026-01-01,29,Swimming Pool,Thu,06:00,3.9,Thu,02:04
+R-0177,2026-01-01,38,Gym,Thu,10:00,15.9,Wed,18:08
+R-0178,2026-01-01,41,Clubhouse,Thu,19:00,75.3,Mon,15:40
+R-0179,2026-01-01,7,Multipurpose Hall,Sat,10:00,186.8,Fri,15:11
+R-0180,2026-01-01,68,Badminton Court,Thu,21:00,23.5,Wed,21:28
+R-0181,2026-01-01,37,Badminton Court,Sat,18:00,41.6,Fri,00:21
+R-0182,2026-01-01,31,Gym,Fri,08:00,15.7,Thu,16:18
+R-0183,2026-01-01,37,Multipurpose Hall,Sat,11:00,59.3,Wed,23:40
+R-0184,2026-01-01,45,Badminton Court,Fri,21:00,37.3,Thu,07:41
+R-0185,2026-01-01,12,Tennis Court,Fri,18:00,29.8,Thu,12:11
+R-0186,2026-01-01,47,Clubhouse,Thu,11:00,193.9,Wed,09:04
+R-0187,2026-01-01,54,Squash Court,Thu,18:00,17.3,Thu,00:43
+R-0188,2026-01-01,53,Badminton Court,Fri,17:00,39.9,Thu,01:04
+R-0189,2026-01-01,39,Swimming Pool,Fri,19:00,16.3,Fri,02:44
+R-0190,2026-01-01,60,Squash Court,Fri,08:00,16.9,Thu,15:09
+R-0191,2026-01-01,10,Tennis Court,Thu,19:00,10.2,Thu,08:48
+R-0192,2026-01-01,22,Kids Play Area,Thu,10:00,6.9,Thu,03:06
+R-0193,2026-01-01,35,Badminton Court,Thu,20:00,3.8,Thu,16:12
+R-0194,2026-01-01,72,Swimming Pool,Thu,08:00,29.9,Wed,02:04
+R-0195,2026-01-01,20,Tennis Court,Fri,18:00,36.0,Thu,06:02
+R-0196,2026-01-01,42,Clubhouse,Sat,20:00,404.8,Wed,23:12
+R-0197,2026-01-01,12,Swimming Pool,Fri,16:00,15.7,Fri,00:16
+R-0198,2026-01-01,30,Multipurpose Hall,Sat,17:00,212.8,Thu,20:15
+R-0199,2026-01-01,27,Badminton Court,Sat,17:00,18.3,Fri,22:40
+R-0201,2026-01-01,9,Swimming Pool,Fri,07:00,16.2,Thu,14:47
+R-0202,2026-01-01,15,Gym,Thu,17:00,27.1,Wed,13:52
+R-0203,2026-01-01,46,Tennis Court,Fri,07:00,29.5,Thu,01:32
+R-0204,2026-01-01,14,Gym,Thu,11:00,4.1,Thu,06:57
+R-0205,2026-01-01,27,Gym,Sat,17:00,14.6,Sat,02:22
+R-0206,2026-01-01,37,Swimming Pool,Fri,19:00,16.3,Fri,02:39
+R-0207,2026-01-01,34,Multipurpose Hall,Thu,10:00,255.5,Sun,18:28
+R-0208,2026-01-01,26,Gym,Thu,19:00,15.4,Thu,03:38
+R-0209,2026-01-01,40,Gym,Fri,11:00,4.7,Fri,06:20
+R-0210,2026-01-01,25,Badminton Court,Thu,20:00,4.0,Thu,15:59
+R-0211,2026-01-01,45,Multipurpose Hall,Fri,19:00,163.8,Fri,23:10
+R-0212,2026-01-01,72,Clubhouse,Sat,11:00,374.2,Thu,20:45
+R-0213,2026-01-01,8,Badminton Court,Thu,19:00,31.4,Wed,11:38
+R-0214,2026-01-01,14,Badminton Court,Thu,17:00,3.6,Thu,13:22
+R-0215,2026-01-01,57,Gym,Sat,07:00,15.5,Fri,15:28
+R-0216,2026-01-01,6,Badminton Court,Thu,20:00,19.3,Thu,00:39
+R-0217,2026-01-01,19,Tennis Court,Fri,17:00,12.3,Fri,04:42
+R-0218,2026-01-01,14,Squash Court,Fri,19:00,4.0,Fri,14:57
+R-0219,2026-01-01,3,Swimming Pool,Thu,19:00,3.6,Thu,15:23
+R-0220,2026-01-01,61,Badminton Court,Thu,18:00,40.3,Wed,01:45
+R-0221,2026-01-01,45,Gym,Thu,16:00,32.4,Wed,07:34
+R-0222,2026-01-01,24,Tennis Court,Sat,07:00,43.2,Thu,11:47
+R-0223,2026-01-01,12,Swimming Pool,Sat,19:00,16.0,Sat,03:02
+R-0224,2026-01-01,24,Badminton Court,Sat,18:00,8.6,Sat,09:26
+R-0225,2026-01-01,45,Clubhouse,Thu,11:00,287.1,Sat,11:55
+R-0226,2026-01-01,11,Clubhouse,Sat,19:00,251.7,Wed,07:18
+R-0227,2026-01-01,21,Kids Play Area,Thu,17:00,2.0,Thu,15:02
+R-0228,2026-01-01,32,Gym,Thu,15:00,15.1,Wed,23:56
+R-0229,2026-01-01,48,Squash Court,Fri,07:00,32.5,Wed,22:29
+R-0230,2026-01-01,22,Gym,Fri,18:00,30.4,Thu,11:36
+R-0231,2026-01-01,23,Multipurpose Hall,Thu,18:00,445.9,Sun,04:04
+R-0232,2026-01-01,66,Kids Play Area,Thu,10:00,2.8,Thu,07:09
+R-0233,2026-01-01,43,Badminton Court,Sat,17:00,37.3,Fri,03:44
+R-0234,2026-01-01,47,Squash Court,Thu,19:00,16.3,Thu,02:41
+R-0235,2026-01-01,30,Swimming Pool,Sat,19:00,16.3,Sat,02:42
+R-0236,2026-01-01,26,Gym,Thu,06:00,28.4,Wed,01:34
+R-0237,2026-01-01,16,Squash Court,Fri,07:00,15.6,Thu,15:25
+R-0238,2026-01-01,31,Tennis Court,Thu,19:00,9.4,Thu,09:35
+R-0239,2026-01-01,13,Kids Play Area,Thu,17:00,4.3,Thu,12:41
+R-0240,2026-01-01,65,Kids Play Area,Thu,17:00,6.0,Thu,10:00
+R-0241,2026-01-01,7,Multipurpose Hall,Sat,18:00,275.3,Tue,06:42
+R-0242,2026-01-01,19,Badminton Court,Sat,21:00,17.6,Sat,03:24
+R-0243,2026-01-01,17,Squash Court,Fri,19:00,3.8,Fri,15:12
+R-0244,2026-01-01,27,Badminton Court,Thu,19:00,19.4,Wed,23:35
+R-0245,2026-01-01,40,Squash Court,Fri,18:00,32.4,Thu,09:34
+R-0246,2026-01-01,5,Swimming Pool,Fri,07:00,27.4,Thu,03:38
+R-0247,2026-01-01,16,Swimming Pool,Thu,06:00,3.7,Thu,02:17
+R-0248,2026-01-01,43,Clubhouse,Sat,11:00,217.2,Thu,09:47
+R-0249,2026-01-01,27,Swimming Pool,Fri,17:00,16.0,Fri,01:02
+R-0250,2026-01-01,2,Badminton Court,Thu,20:00,35.4,Wed,08:36
+R-0251,2026-01-01,13,Kids Play Area,Fri,10:00,5.1,Fri,04:52
+R-0252,2026-01-01,19,Gym,Sat,11:00,19.9,Fri,15:05
+R-0253,2026-01-01,36,Kids Play Area,Thu,10:00,2.1,Thu,07:51
+R-0254,2026-01-01,26,Gym,Fri,17:00,15.9,Fri,01:06
+R-0255,2026-01-01,71,Gym,Sat,17:00,24.8,Fri,16:15
+R-0256,2026-01-01,40,Swimming Pool,Thu,16:00,3.2,Thu,12:51
+R-0257,2026-01-01,5,Multipurpose Hall,Fri,18:00,273.2,Mon,08:48
+R-0258,2026-01-01,17,Badminton Court,Fri,21:00,34.1,Thu,10:53
+R-0259,2026-01-01,77,Clubhouse,Thu,19:00,244.1,Mon,14:52
+R-0260,2026-01-01,25,Swimming Pool,Thu,17:00,2.7,Thu,14:15
+R-0261,2026-01-01,24,Tennis Court,Thu,17:00,9.2,Thu,07:51
+R-0262,2026-01-01,10,Swimming Pool,Fri,19:00,16.9,Fri,02:05
+R-0263,2026-01-01,54,Tennis Court,Fri,07:00,62.7,Tue,16:17
+R-0264,2026-01-01,17,Tennis Court,Fri,07:00,26.9,Thu,04:09
+R-0265,2026-01-01,47,Swimming Pool,Sat,17:00,26.2,Fri,14:46
+R-0266,2026-01-01,16,Kids Play Area,Thu,18:00,3.4,Thu,14:35
+R-0267,2026-01-01,80,Multipurpose Hall,Fri,18:00,212.4,Wed,21:36
+R-0268,2026-01-01,42,Squash Court,Sat,07:00,29.5,Fri,01:31
+R-0269,2026-01-01,60,Badminton Court,Sat,19:00,18.4,Sat,00:35
+R-0270,2026-01-01,11,Kids Play Area,Thu,10:00,5.7,Thu,04:17
+R-0271,2026-01-01,33,Squash Court,Thu,08:00,17.1,Wed,14:57
+R-0272,2026-01-01,26,Badminton Court,Sat,21:00,45.3,Thu,23:41
+R-0273,2026-01-01,30,Multipurpose Hall,Sat,19:00,441.0,Tue,09:59
+R-0274,2026-01-01,32,Gym,Thu,11:00,3.7,Thu,07:21
+R-0275,2026-01-01,47,Multipurpose Hall,Sat,19:00,503.4,Sat,19:38
+R-0276,2026-01-01,45,Kids Play Area,Sat,16:00,4.2,Sat,11:50
+R-0277,2026-01-01,8,Swimming Pool,Thu,19:00,16.7,Thu,02:19
+R-0278,2026-01-01,55,Tennis Court,Thu,07:00,12.9,Wed,18:06
+R-0279,2026-01-01,54,Multipurpose Hall,Sat,11:00,204.3,Thu,22:41
+R-0280,2026-01-01,34,Tennis Court,Fri,18:00,59.8,Wed,06:15
+R-0281,2026-01-01,20,Tennis Court,Thu,19:00,31.1,Wed,11:54
+R-0282,2026-01-01,11,Multipurpose Hall,Fri,18:00,317.5,Sat,12:31
+R-0283,2026-01-01,37,Gym,Fri,17:00,31.5,Thu,09:30
+R-0284,2026-01-01,13,Gym,Thu,11:00,32.8,Wed,02:14
+R-0285,2026-01-01,17,Gym,Thu,11:00,3.7,Thu,07:20
+R-0286,2026-01-01,14,Multipurpose Hall,Sat,19:00,145.2,Sun,17:45
+R-0287,2026-01-01,24,Swimming Pool,Fri,19:00,16.2,Fri,02:45
+R-0288,2026-01-01,38,Tennis Court,Fri,07:00,38.3,Wed,16:42
+R-0289,2026-01-01,11,Squash Court,Thu,08:00,20.2,Wed,11:47
+R-0290,2026-01-01,38,Swimming Pool,Thu,19:00,3.1,Thu,15:52
+R-0291,2026-01-01,27,Badminton Court,Thu,18:00,20.8,Wed,21:12
+R-0292,2026-01-01,36,Badminton Court,Sat,18:00,24.5,Fri,17:31
+R-0293,2026-01-01,57,Tennis Court,Fri,07:00,37.4,Wed,17:38
+R-0294,2026-01-01,23,Clubhouse,Sat,20:00,108.1,Tue,07:56
+R-0295,2026-01-01,20,Gym,Fri,10:00,15.4,Thu,18:37
+R-0296,2026-01-01,34,Squash Court,Fri,18:00,35.1,Thu,06:55
+R-0297,2026-01-01,45,Clubhouse,Thu,11:00,410.8,Mon,08:12
+R-0298,2026-01-01,8,Swimming Pool,Thu,17:00,3.8,Thu,13:12
+R-0299,2026-01-01,18,Tennis Court,Fri,19:00,26.8,Thu,16:13
+R-0300,2026-01-01,24,Badminton Court,Thu,19:00,18.9,Thu,00:04
+R-0301,2026-01-01,18,Kids Play Area,Thu,09:00,3.6,Thu,05:25
+R-0302,2026-01-01,32,Multipurpose Hall,Thu,19:00,223.8,Tue,11:10
+R-0303,2026-01-01,59,Multipurpose Hall,Thu,18:00,59.9,Tue,06:07
+R-0304,2026-01-01,23,Swimming Pool,Thu,19:00,2.9,Thu,16:08
+R-0305,2026-01-01,32,Gym,Thu,11:00,6.1,Thu,04:54
+R-0306,2026-01-01,13,Kids Play Area,Thu,16:00,2.1,Thu,13:53
+R-0307,2026-01-01,25,Kids Play Area,Thu,10:00,2.2,Thu,07:49
+R-0308,2026-01-01,3,Gym,Sat,11:00,15.7,Fri,19:17
+R-0309,2026-01-01,27,Kids Play Area,Thu,10:00,2.0,Thu,07:58
+R-0310,2026-01-01,10,Multipurpose Hall,Sat,19:00,195.3,Fri,15:41
+R-0311,2026-01-01,69,Clubhouse,Thu,11:00,515.4,Wed,23:35
+R-0312,2026-01-01,13,Gym,Fri,11:00,32.6,Thu,02:26
+R-0313,2026-01-01,26,Swimming Pool,Thu,16:00,2.9,Thu,13:08
+R-0314,2026-01-01,18,Gym,Fri,17:00,30.9,Thu,10:09
+R-0315,2026-01-01,19,Badminton Court,Thu,20:00,17.9,Thu,02:04
+R-0316,2026-01-01,6,Badminton Court,Thu,19:00,3.9,Thu,15:09
+R-0317,2026-01-01,29,Gym,Fri,10:00,6.9,Fri,03:05
+R-0318,2026-01-01,9,Swimming Pool,Sat,06:00,40.5,Thu,13:28
+R-0319,2026-01-01,14,Swimming Pool,Fri,18:00,16.3,Fri,01:41
+R-0320,2026-01-01,5,Squash Court,Thu,18:00,5.5,Thu,12:32

@@ -1,0 +1,8 @@
+{
+  "train_rows": 7914,
+  "test_rows": 1738,
+  "cutoff_timestamp": "2025-08-22 13:44:00.511288",
+  "n_features_facility_stage": 49,
+  "n_features_time_stage": 57,
+  "trained_at": "2026-09-12T08:45:43"
+}
